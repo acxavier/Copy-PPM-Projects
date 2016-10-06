@@ -57,49 +57,66 @@ namespace Copy_PPM_Projects
             newppmContext.Load(newppmContext.CustomFields);
             newppmContext.ExecuteQuery();
 
-            //foreach (var prjOrigem in ppmContext.Projects)
-            //{
-            //}
-            //var prjOrigemComCustomFields = prjOrigem.IncludeCustomFields;
-            //ppmContext.Load(prjOrigemComCustomFields);
-            //ppmContext.ExecuteQuery();
-            try
+            progressBar.Maximum = ppmContext.Projects.Count();
+
+            foreach (var prjOrigem in ppmContext.Projects)
             {
-                var prjOrigemComCustomFields = ppmContext.Projects.FirstOrDefault(c => c.Name == txtProjeto.Text).IncludeCustomFields;
-                ppmContext.Load(prjOrigemComCustomFields);
-                ppmContext.ExecuteQuery();
-
-                var prjDestinoComCustomFields = newppmContext.Projects.FirstOrDefault(c => c.Name == prjOrigemComCustomFields.Name).CheckOut().IncludeCustomFields;
-                newppmContext.Load(prjDestinoComCustomFields);
-                newppmContext.ExecuteQuery();
-
-                foreach (var cfOrigem in prjOrigemComCustomFields.FieldValues)
+                bool projectReadyToCopy = false;
+                try
                 {
-                    var cfDetalhe = newppmContext.CustomFields.FirstOrDefault(c => c.InternalName == cfOrigem.Key);
-                    if (cfDetalhe.Formula == null)
+                    var prjOrigemComCustomFields = prjOrigem.IncludeCustomFields;
+                    ppmContext.Load(prjOrigemComCustomFields);
+                    ppmContext.ExecuteQuery();
+
+                    var prjDestino = newppmContext.Projects.FirstOrDefault(c => c.Name == prjOrigemComCustomFields.Name);
+                    if (prjDestino.IsCheckedOut)
                     {
-                        prjDestinoComCustomFields.SetCustomFieldValue(cfOrigem.Key, cfOrigem.Value);
+                        var retry = MessageBox.Show("Project with check-out: " + prjDestino.Name + "\nYou must check-in the Project to copy the fields values. \nDo you want to try again?", "Check-out Project", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if(retry == DialogResult.Yes)
+                        {
+                            projectReadyToCopy = true;
+                        }
+                    }
+                    else
+                    {
+                        projectReadyToCopy = true;
                     }
 
+                    if(projectReadyToCopy)
+                    {
+                        var prjDestinoComCustomFields = prjDestino.CheckOut().IncludeCustomFields;
+                        newppmContext.Load(prjDestinoComCustomFields);
+                        newppmContext.ExecuteQuery();
 
+                        foreach (var cfOrigem in prjOrigemComCustomFields.FieldValues)
+                        {
+                            var cfDetalhe = newppmContext.CustomFields.FirstOrDefault(c => c.InternalName == cfOrigem.Key);
+                            if (cfDetalhe.Formula == null)
+                            {
+                                prjDestinoComCustomFields.SetCustomFieldValue(cfOrigem.Key, cfOrigem.Value);
+                            }
+                        }
+
+                        prjDestinoComCustomFields.Owner = prjOrigemComCustomFields.Owner;
+
+                        prjDestinoComCustomFields.Update();
+                        var queueJob = prjDestinoComCustomFields.Publish(true);
+                        newppmContext.WaitForQueue(queueJob, 20);
+
+                        var pubProject = newppmContext.Projects.GetByGuid(prjDestinoComCustomFields.Id);
+                        pubProject.SubmitToWorkflow();
+                        newppmContext.ExecuteQuery();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
 
-                prjDestinoComCustomFields.Update();
-                var queueJob = prjDestinoComCustomFields.Publish(true);
-                newppmContext.WaitForQueue(queueJob, 20);
-
-                var pubProject = newppmContext.Projects.GetByGuid(prjDestinoComCustomFields.Id);
-                pubProject.SubmitToWorkflow();
-                newppmContext.ExecuteQuery();
-
-                MessageBox.Show("Project Information copy with success!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                progressBar.Value += 1;
 
             }
-
         }
     }
 }

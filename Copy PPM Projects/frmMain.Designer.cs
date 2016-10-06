@@ -43,8 +43,7 @@
             this.txtPWAUrlOrigem = new System.Windows.Forms.TextBox();
             this.lblPWAUrlOrigem = new System.Windows.Forms.Label();
             this.gbxDestino = new System.Windows.Forms.GroupBox();
-            this.txtProjeto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.gbxPPMExpress.SuspendLayout();
             this.gbxDestino.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +102,7 @@
             // 
             // btnCarregar
             // 
-            this.btnCarregar.Location = new System.Drawing.Point(571, 459);
+            this.btnCarregar.Location = new System.Drawing.Point(526, 136);
             this.btnCarregar.Name = "btnCarregar";
             this.btnCarregar.Size = new System.Drawing.Size(93, 40);
             this.btnCarregar.TabIndex = 6;
@@ -181,6 +180,7 @@
             // gbxDestino
             // 
             this.gbxDestino.Controls.Add(this.lblSenha);
+            this.gbxDestino.Controls.Add(this.btnCarregar);
             this.gbxDestino.Controls.Add(this.lblUsuario);
             this.gbxDestino.Controls.Add(this.lblPWAUrlDestino);
             this.gbxDestino.Location = new System.Drawing.Point(19, 242);
@@ -190,32 +190,20 @@
             this.gbxDestino.TabStop = false;
             this.gbxDestino.Text = "To:";
             // 
-            // txtProjeto
+            // progressBar
             // 
-            this.txtProjeto.Location = new System.Drawing.Point(139, 466);
-            this.txtProjeto.Name = "txtProjeto";
-            this.txtProjeto.Size = new System.Drawing.Size(426, 26);
-            this.txtProjeto.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 462);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 29);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Project:";
+            this.progressBar.Location = new System.Drawing.Point(19, 465);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(642, 30);
+            this.progressBar.TabIndex = 13;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 517);
-            this.Controls.Add(this.txtProjeto);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.gbxPPMExpress);
-            this.Controls.Add(this.btnCarregar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtPWAUrlDestino);
@@ -248,8 +236,7 @@
         private System.Windows.Forms.Label lblUsuarioPPM;
         private System.Windows.Forms.TextBox txtPWAUrlOrigem;
         private System.Windows.Forms.Label lblPWAUrlOrigem;
-        private System.Windows.Forms.TextBox txtProjeto;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 
