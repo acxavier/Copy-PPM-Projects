@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PPM_Publish_Deploy
+namespace Copy_PPM_Projects
 {
     static class Program
     {

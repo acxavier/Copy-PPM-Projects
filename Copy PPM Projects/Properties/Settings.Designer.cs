@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PPM_Publish_Deploy.Properties {
+namespace Copy_PPM_Projects.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

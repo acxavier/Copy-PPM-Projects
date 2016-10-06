@@ -1,4 +1,4 @@
-﻿namespace PPM_Publish_Deploy
+﻿namespace Copy_PPM_Projects
 {
     partial class frmMain
     {
@@ -64,7 +64,6 @@
             this.txtPWAUrlDestino.Name = "txtPWAUrlDestino";
             this.txtPWAUrlDestino.Size = new System.Drawing.Size(492, 26);
             this.txtPWAUrlDestino.TabIndex = 1;
-            this.txtPWAUrlDestino.Text = "https://senacminas.sharepoint.com/sites/pwa/";
             // 
             // lblSenha
             // 
@@ -92,7 +91,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(492, 26);
             this.txtUsuario.TabIndex = 4;
-            this.txtUsuario.Text = "pwa.admin@mg.senac.br";
             // 
             // txtSenha
             // 
@@ -101,7 +99,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(379, 26);
             this.txtSenha.TabIndex = 5;
-            this.txtSenha.Text = "FDAR93!E@";
             // 
             // btnCarregar
             // 
@@ -120,7 +117,6 @@
             this.txtPwdPPM.PasswordChar = '*';
             this.txtPwdPPM.Size = new System.Drawing.Size(379, 26);
             this.txtPwdPPM.TabIndex = 10;
-            this.txtPwdPPM.Text = "PRDSP@789";
             // 
             // txtUsuarioPPM
             // 
@@ -128,7 +124,6 @@
             this.txtUsuarioPPM.Name = "txtUsuarioPPM";
             this.txtUsuarioPPM.Size = new System.Drawing.Size(492, 26);
             this.txtUsuarioPPM.TabIndex = 9;
-            this.txtUsuarioPPM.Text = "sp_admin_prd";
             // 
             // lblUsuarioPPM
             // 
@@ -171,7 +166,6 @@
             this.txtPWAUrlOrigem.Name = "txtPWAUrlOrigem";
             this.txtPWAUrlOrigem.Size = new System.Drawing.Size(492, 26);
             this.txtPWAUrlOrigem.TabIndex = 14;
-            this.txtPWAUrlOrigem.Text = "http://armg83/PWA/";
             // 
             // lblPWAUrlOrigem
             // 

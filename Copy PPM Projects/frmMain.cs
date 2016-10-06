@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace PPM_Publish_Deploy
+namespace Copy_PPM_Projects
 {
 
     public partial class frmMain : System.Windows.Forms.Form
@@ -35,7 +35,7 @@ namespace PPM_Publish_Deploy
             string pass = txtPwdPPM.Text;
             pass.ToList().ForEach(secpass.AppendChar);
 
-            ppmContext.Credentials = new NetworkCredential("sp_admin_prd", secpass, "SENAC_ADM");
+            newppmContext.Credentials = new SharePointOnlineCredentials(txtUsuarioPPM.Text, secpass);
 
             ppmContext.Load(ppmContext.Projects);
             ppmContext.ExecuteQuery();
@@ -57,11 +57,6 @@ namespace PPM_Publish_Deploy
             newppmContext.Load(newppmContext.CustomFields);
             newppmContext.ExecuteQuery();
 
-
-            var prjOrigemComCustomFields = ppmContext.Projects.FirstOrDefault(c => c.Name == txtProjeto.Text).IncludeCustomFields;
-            ppmContext.Load(prjOrigemComCustomFields);
-            ppmContext.ExecuteQuery();
-
             //foreach (var prjOrigem in ppmContext.Projects)
             //{
             //}
@@ -70,6 +65,10 @@ namespace PPM_Publish_Deploy
             //ppmContext.ExecuteQuery();
             try
             {
+                var prjOrigemComCustomFields = ppmContext.Projects.FirstOrDefault(c => c.Name == txtProjeto.Text).IncludeCustomFields;
+                ppmContext.Load(prjOrigemComCustomFields);
+                ppmContext.ExecuteQuery();
+
                 var prjDestinoComCustomFields = newppmContext.Projects.FirstOrDefault(c => c.Name == prjOrigemComCustomFields.Name).CheckOut().IncludeCustomFields;
                 newppmContext.Load(prjDestinoComCustomFields);
                 newppmContext.ExecuteQuery();
@@ -93,17 +92,13 @@ namespace PPM_Publish_Deploy
                 pubProject.SubmitToWorkflow();
                 newppmContext.ExecuteQuery();
 
-
+                MessageBox.Show("Dados do projeto copiado com sucesso!");
             }
             catch (Exception ex)
             {
-                        
+                MessageBox.Show(ex.Message);
 
             }
-
-            MessageBox.Show("Dados do projeto copiado com sucesso!");
-
-
 
         }
     }
