@@ -92,7 +92,7 @@ namespace Copy_PPM_Projects
                 pubProject.SubmitToWorkflow();
                 newppmContext.ExecuteQuery();
 
-                MessageBox.Show("Dados do projeto copiado com sucesso!");
+                MessageBox.Show("Project Information copy with success!");
             }
             catch (Exception ex)
             {

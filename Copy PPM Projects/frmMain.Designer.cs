@@ -46,13 +46,14 @@
             this.txtProjeto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxPPMExpress.SuspendLayout();
+            this.gbxDestino.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPWAUrlDestino
             // 
             this.lblPWAUrlDestino.AutoSize = true;
             this.lblPWAUrlDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPWAUrlDestino.Location = new System.Drawing.Point(31, 272);
+            this.lblPWAUrlDestino.Location = new System.Drawing.Point(29, 30);
             this.lblPWAUrlDestino.Name = "lblPWAUrlDestino";
             this.lblPWAUrlDestino.Size = new System.Drawing.Size(109, 29);
             this.lblPWAUrlDestino.TabIndex = 0;
@@ -60,44 +61,44 @@
             // 
             // txtPWAUrlDestino
             // 
-            this.txtPWAUrlDestino.Location = new System.Drawing.Point(146, 275);
+            this.txtPWAUrlDestino.Location = new System.Drawing.Point(163, 275);
             this.txtPWAUrlDestino.Name = "txtPWAUrlDestino";
-            this.txtPWAUrlDestino.Size = new System.Drawing.Size(492, 26);
+            this.txtPWAUrlDestino.Size = new System.Drawing.Size(475, 26);
             this.txtPWAUrlDestino.TabIndex = 1;
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(52, 381);
+            this.lblSenha.Location = new System.Drawing.Point(12, 139);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(88, 29);
+            this.lblSenha.Size = new System.Drawing.Size(126, 29);
             this.lblSenha.TabIndex = 2;
-            this.lblSenha.Text = "Senha:";
+            this.lblSenha.Text = "Password:";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(38, 325);
+            this.lblUsuario.Location = new System.Drawing.Point(68, 83);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(102, 29);
+            this.lblUsuario.Size = new System.Drawing.Size(70, 29);
             this.lblUsuario.TabIndex = 3;
-            this.lblUsuario.Text = "Usuário:";
+            this.lblUsuario.Text = "User:";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(146, 329);
+            this.txtUsuario.Location = new System.Drawing.Point(163, 329);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(492, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(475, 26);
             this.txtUsuario.TabIndex = 4;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(146, 385);
+            this.txtSenha.Location = new System.Drawing.Point(163, 385);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(379, 26);
+            this.txtSenha.Size = new System.Drawing.Size(362, 26);
             this.txtSenha.TabIndex = 5;
             // 
             // btnCarregar
@@ -106,44 +107,44 @@
             this.btnCarregar.Name = "btnCarregar";
             this.btnCarregar.Size = new System.Drawing.Size(93, 40);
             this.btnCarregar.TabIndex = 6;
-            this.btnCarregar.Text = "Carregar";
+            this.btnCarregar.Text = "Copy";
             this.btnCarregar.UseVisualStyleBackColor = true;
             this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
             // 
             // txtPwdPPM
             // 
-            this.txtPwdPPM.Location = new System.Drawing.Point(127, 157);
+            this.txtPwdPPM.Location = new System.Drawing.Point(144, 157);
             this.txtPwdPPM.Name = "txtPwdPPM";
             this.txtPwdPPM.PasswordChar = '*';
-            this.txtPwdPPM.Size = new System.Drawing.Size(379, 26);
+            this.txtPwdPPM.Size = new System.Drawing.Size(362, 26);
             this.txtPwdPPM.TabIndex = 10;
             // 
             // txtUsuarioPPM
             // 
-            this.txtUsuarioPPM.Location = new System.Drawing.Point(127, 101);
+            this.txtUsuarioPPM.Location = new System.Drawing.Point(144, 101);
             this.txtUsuarioPPM.Name = "txtUsuarioPPM";
-            this.txtUsuarioPPM.Size = new System.Drawing.Size(492, 26);
+            this.txtUsuarioPPM.Size = new System.Drawing.Size(475, 26);
             this.txtUsuarioPPM.TabIndex = 9;
             // 
             // lblUsuarioPPM
             // 
             this.lblUsuarioPPM.AutoSize = true;
             this.lblUsuarioPPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioPPM.Location = new System.Drawing.Point(19, 97);
+            this.lblUsuarioPPM.Location = new System.Drawing.Point(68, 98);
             this.lblUsuarioPPM.Name = "lblUsuarioPPM";
-            this.lblUsuarioPPM.Size = new System.Drawing.Size(102, 29);
+            this.lblUsuarioPPM.Size = new System.Drawing.Size(70, 29);
             this.lblUsuarioPPM.TabIndex = 8;
-            this.lblUsuarioPPM.Text = "Usuário:";
+            this.lblUsuarioPPM.Text = "User:";
             // 
             // lblSenhaPPM
             // 
             this.lblSenhaPPM.AutoSize = true;
             this.lblSenhaPPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenhaPPM.Location = new System.Drawing.Point(33, 153);
+            this.lblSenhaPPM.Location = new System.Drawing.Point(12, 153);
             this.lblSenhaPPM.Name = "lblSenhaPPM";
-            this.lblSenhaPPM.Size = new System.Drawing.Size(88, 29);
+            this.lblSenhaPPM.Size = new System.Drawing.Size(126, 29);
             this.lblSenhaPPM.TabIndex = 7;
-            this.lblSenhaPPM.Text = "Senha:";
+            this.lblSenhaPPM.Text = "Password:";
             // 
             // gbxPPMExpress
             // 
@@ -158,20 +159,20 @@
             this.gbxPPMExpress.Size = new System.Drawing.Size(637, 206);
             this.gbxPPMExpress.TabIndex = 11;
             this.gbxPPMExpress.TabStop = false;
-            this.gbxPPMExpress.Text = "PPM Express";
+            this.gbxPPMExpress.Text = "Source:";
             // 
             // txtPWAUrlOrigem
             // 
-            this.txtPWAUrlOrigem.Location = new System.Drawing.Point(127, 44);
+            this.txtPWAUrlOrigem.Location = new System.Drawing.Point(144, 44);
             this.txtPWAUrlOrigem.Name = "txtPWAUrlOrigem";
-            this.txtPWAUrlOrigem.Size = new System.Drawing.Size(492, 26);
+            this.txtPWAUrlOrigem.Size = new System.Drawing.Size(475, 26);
             this.txtPWAUrlOrigem.TabIndex = 14;
             // 
             // lblPWAUrlOrigem
             // 
             this.lblPWAUrlOrigem.AutoSize = true;
             this.lblPWAUrlOrigem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPWAUrlOrigem.Location = new System.Drawing.Point(12, 41);
+            this.lblPWAUrlOrigem.Location = new System.Drawing.Point(29, 40);
             this.lblPWAUrlOrigem.Name = "lblPWAUrlOrigem";
             this.lblPWAUrlOrigem.Size = new System.Drawing.Size(109, 29);
             this.lblPWAUrlOrigem.TabIndex = 13;
@@ -179,12 +180,15 @@
             // 
             // gbxDestino
             // 
+            this.gbxDestino.Controls.Add(this.lblSenha);
+            this.gbxDestino.Controls.Add(this.lblUsuario);
+            this.gbxDestino.Controls.Add(this.lblPWAUrlDestino);
             this.gbxDestino.Location = new System.Drawing.Point(19, 242);
             this.gbxDestino.Name = "gbxDestino";
             this.gbxDestino.Size = new System.Drawing.Size(642, 200);
             this.gbxDestino.TabIndex = 12;
             this.gbxDestino.TabStop = false;
-            this.gbxDestino.Text = "PWA de destino";
+            this.gbxDestino.Text = "To:";
             // 
             // txtProjeto
             // 
@@ -199,9 +203,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(31, 462);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 29);
+            this.label1.Size = new System.Drawing.Size(95, 29);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Projeto:";
+            this.label1.Text = "Project:";
             // 
             // frmMain
             // 
@@ -214,15 +218,14 @@
             this.Controls.Add(this.btnCarregar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txtPWAUrlDestino);
-            this.Controls.Add(this.lblPWAUrlDestino);
             this.Controls.Add(this.gbxDestino);
             this.Name = "frmMain";
-            this.Text = "PPM Express";
+            this.Text = "Copy PPM Projects";
             this.gbxPPMExpress.ResumeLayout(false);
             this.gbxPPMExpress.PerformLayout();
+            this.gbxDestino.ResumeLayout(false);
+            this.gbxDestino.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
